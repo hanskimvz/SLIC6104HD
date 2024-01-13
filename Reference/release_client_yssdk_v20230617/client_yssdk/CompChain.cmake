@@ -1,0 +1,5 @@
+MESSAGE("***********************************************") 
+MESSAGE("         Build With Windows Platform           ") 
+MESSAGE("***********************************************") 
+set(PLATMAJOR Windows) 
+set(PLATMINOR x64) 
