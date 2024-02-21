@@ -1,0 +1,10 @@
+^E:\WORK\SOURCE\SDK_RELEASE\CLIENT_YSSDK\X86-RELEASE\CMAKEFILES\9CC042E065B0186C8D027DE4D9BE34B5\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/work/source/sdk_release/client_yssdk -BE:/work/source/sdk_release/client_yssdk/x86-Release --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/work/source/sdk_release/client_yssdk/x86-Release/yssdk_test.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

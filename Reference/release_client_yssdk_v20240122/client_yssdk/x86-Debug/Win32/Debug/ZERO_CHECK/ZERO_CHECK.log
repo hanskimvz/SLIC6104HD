@@ -1,0 +1,19 @@
+﻿  1>Checking Build System
+  CMake is re-running because E:/work/source/sdk_release/client_yssdk/x86-Debug/CMakeFiles/generate.stamp is out-of-date.
+    the file 'E:/work/source/sdk_release/client_yssdk/CompChain.cmake'
+    is newer than 'E:/work/source/sdk_release/client_yssdk/x86-Debug/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  |                        Build protoc yssdk                         |
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  ***********************************************
+           Build With Windows Platform           
+  ***********************************************
+  == Into MSVC
+  link_directories 
+  -- E:/work/source/sdk_release/client_yssdk
+  link_directories 
+  -- E:/work/source/sdk_release/client_yssdk
+  -- Configuring done (0.0s)
+  -- Generating done (0.0s)
+  -- Build files have been written to: E:/work/source/sdk_release/client_yssdk/x86-Debug

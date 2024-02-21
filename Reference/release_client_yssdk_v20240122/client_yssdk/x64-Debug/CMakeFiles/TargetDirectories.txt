@@ -1,0 +1,5 @@
+E:/work/source/sdk_release/client_yssdk/x64-Debug/CMakeFiles/ALL_BUILD.dir
+E:/work/source/sdk_release/client_yssdk/x64-Debug/CMakeFiles/ZERO_CHECK.dir
+E:/work/source/sdk_release/client_yssdk/x64-Debug/test/client_test/CMakeFiles/yssdk_client_test.dir
+E:/work/source/sdk_release/client_yssdk/x64-Debug/test/playback_test/CMakeFiles/playback_test.dir
+E:/work/source/sdk_release/client_yssdk/x64-Debug/test/ptz_test/CMakeFiles/ptz_test.dir

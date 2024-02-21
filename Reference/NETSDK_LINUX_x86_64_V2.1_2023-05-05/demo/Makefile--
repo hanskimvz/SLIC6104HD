@@ -1,0 +1,66 @@
+TARGET = demo_test
+
+C_FLAGS += -Wall -g  -DLINUX -DNETSDK -O0
+
+INC_FLAGS += \
+	    -I../include \
+	    -I./ \
+	    -Imp4Muxer
+
+#PLATFORM=hisconv100
+#CROSS_COMPILE=arm-hisiv100nptl-linux-
+
+#PLATFORM=x86_64
+#CROSS_COMPILE=
+
+#PLATFORM=hisconv300
+#CROSS_COMPILE=arm-hisiv300-linux-
+
+
+PLATFORM=arm-buildroot-linux-uclibcgnueabihf
+CROSS_COMPILE=arm-buildroot-linux-uclibcgnueabihf-
+
+
+USE_FFMPEG_SO=0
+USE_LIVE555=0
+LD_FLAGS += -lrt -lpthread
+
+
+ifeq ($(USE_LIVE555), 1)
+	LD_FLAGS += ../lib/$(PLATFORM)/libNetSDK.a
+else
+	LD_FLAGS += ../lib/$(PLATFORM)/libNetSDK_no_live555.a
+endif
+
+LD_FLAGS += ../lib/$(PLATFORM)/libtinyxml.a ../lib/$(PLATFORM)/libixml.a
+
+COMPILE.c = $(CROSS_COMPILE)g++ $(C_FLAGS) $(INC_FLAGS) -c
+LINK.c = $(CROSS_COMPILE)g++
+
+RELTARGET = $(TARGET)
+
+SOURCES = $(wildcard *.cpp mp4Muxer/*.cpp)
+HEADERS = $(wildcard *.h)
+
+RELOBJFILES = $(SOURCES:%.cpp=release/%.o)
+
+RELLDFLAGS	= 
+			
+.PHONY: clean release install
+
+all:    release
+
+
+release:    $(RELTARGET) clean
+
+$(RELTARGET):   $(RELOBJFILES)
+	$(LINK.c) -o $@ $^ $(RELLDFLAGS) $(LD_FLAGS)
+
+$(RELOBJFILES): release/%.o: %.cpp $(HEADERS)
+	@mkdir -p release
+	@mkdir -p release/mp4Muxer
+	$(COMPILE.c) -o $@ $<
+
+clean:
+	-$(RM) -rf release  *.d 
+

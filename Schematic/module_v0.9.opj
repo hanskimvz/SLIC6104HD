@@ -1,0 +1,40 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\module_v0.9.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (VCC_BAR
+      (LibraryName "D:\BACKUP\HARDWARES\HSBEST.OLB")
+      (DeviceIndex "0"))
+    (P_NET
+      (LibraryName "D:\BACKUP\HARDWARES\HSBEST.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "D:\BACKUP\HARDWARES\HSBEST.OLB")
+      (DeviceIndex "0"))
+    ("CON 60 B2B"
+      (FullPartName "CON 60 B2B.Normal")
+      (LibraryName "D:\BACKUP\HARDWARES\HSBEST.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "H")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\module_v0.9.dsn")
+      (Path "Design Resources" ".\module_v0.9.dsn" "SCHEMATIC1")
+      (Path "Design Resources" ".\module_v0.9.dsn" "Design Cache")
+      (Select "Design Resources" ".\module_v0.9.dsn" "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 0 747 0 549"))
+      (Tab 0))))
