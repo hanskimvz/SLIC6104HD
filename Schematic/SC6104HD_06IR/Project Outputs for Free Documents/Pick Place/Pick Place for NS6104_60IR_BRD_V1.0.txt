@@ -1,0 +1,39 @@
+Altium Designer Pick and Place Locations
+D:\BACKUP\Codes\SLIC6104\Schematic\SC6104HD_06IR\Project Outputs for Free Documents\Pick Place\Pick Place for NS6104_60IR_BRD_V1.0.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       26-02-24
+Time:       23:59
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+Designator Comment        Layer       Footprint  Center-X(mm) Center-Y(mm) Rotation Description 
+LD12       LTJI0108W30    TopLayer    SMD_IR_LED -12.1865     18.3161      213.75   ""          
+D2         DFLS140        BottomLayer PowerDI123 21.1003      -0.1531      90       ""          
+L1         10uH           BottomLayer LS-2012    21.1003      4.5911       90       ""          
+LD13       LTJI0108W30    TopLayer    SMD_IR_LED -4.1709      21.6193      191.25   ""          
+U2         TPS61165DBVR   BottomLayer SOT23-6    18.5420      9.5103       360      ""          
+R13        2_F            BottomLayer RS-1608    22.8084      8.8591       360      ""          
+R7         2_F//NI        BottomLayer RS-1608    22.8084      10.7846      360      ""          
+R5         33             BottomLayer RS-1608    0.2946       19.1770      180      ""          
+C12        220nF          BottomLayer CS-1608    18.5420      13.9216      270      ""          
+C10        4.7uF-25V-3216 BottomLayer C3216      21.1003      -6.8576      270      ""          
+C9         4.7uF-25V-3216 BottomLayer C3216      0.2946       23.2410      90       ""          
+J3         12505WS-03     BottomLayer 12505WS-3P -21.4630     7.3660       90       ""          
+LD16       LTJI0108W30    TopLayer    SMD_IR_LED 18.3161      12.1865      123.75   ""          
+LD15       LTJI0108W30    TopLayer    SMD_IR_LED 12.1897      18.3317      146.25   ""          
+LD14       LTJI0108W30    TopLayer    SMD_IR_LED 4.4651       21.5607      168.75   ""          
+LD11       LTJI0108W30    TopLayer    SMD_IR_LED -18.1494     12.4360      236.25   ""          
+LD10       LTJI0108W30    TopLayer    SMD_IR_LED -21.5607     4.4651       258.75   ""          
+LD9        LTJI0108W30    TopLayer    SMD_IR_LED -21.6193     -4.1709      281.25   ""          
+LD8        LTJI0108W30    TopLayer    SMD_IR_LED -18.3161     -12.1865     303.75   ""          
+LD7        LTJI0108W30    TopLayer    SMD_IR_LED -12.1897     -18.3317     326.25   ""          
+LD6        LTJI0108W30    TopLayer    SMD_IR_LED -4.2367      -21.5873     348.75   ""          
+LD5        LTJI0108W30    TopLayer    SMD_IR_LED 4.1709       -21.6193     11.25    ""          
+LD4        LTJI0108W30    TopLayer    SMD_IR_LED 11.9403      -18.4983     33.75    ""          
+LD3        LTJI0108W30    TopLayer    SMD_IR_LED 18.1494      -12.4360     56.25    ""          
+LD2        LTJI0108W30    TopLayer    SMD_IR_LED 21.5873      -4.2367      78.75    ""          
+LD1        LTJI0108W30    TopLayer    SMD_IR_LED 21.6193      4.1709       101.25   ""          
