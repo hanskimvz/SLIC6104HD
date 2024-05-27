@@ -1,0 +1,78 @@
+#!/bin/sh
+
+mount -a
+mkdir -p /dev/shm
+mkdir -p /dev/pts
+mount devpts
+
+/sbin/mdev -s
+/sbin/sysctl -p
+mount -t tmpfs mdev /dev
+mount -t sysfs sysfs /sys
+mkdir -p /dev/pts
+mkdir -p /var/lock
+mount -t devpts devpts /dev/pts
+mount -t debugfs none /sys/kernel/debug/
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+busybox telnetd &
+
+LD_LIBRARY_PATH="/lib:/usr/local/lib:/usr/lib:/opt/app/lib:/opt/app/usr/lib"
+export LD_LIBRARY_PATH
+
+echo "
+            _ _ _ _ _ _ _ _ _ _ _ _
+            \  _  _   _  _ _ ___
+            / /__/ \ |_/
+           / __   /  -  _ ___
+          / /  / /  / /
+  _ _ _ _/ /  /  \_/  \_ ______
+___________\___\__________________
+"
+for initscript in /etc/init.d/S[0-9][0-9]*
+do
+	if [ -x $initscript ] ;
+	then
+		echo "[RCS]: $initscript"
+		$initscript
+	fi
+done
+
+echo 768 > /proc/sys/vm/min_free_kbytes
+echo 1 > /proc/sys/vm/overcommit_memory
+echo 1 > /proc/sys/vm/panic_on_oom
+echo 3 > /proc/sys/kernel/panic
+echo 4096 > /proc/sys/kernel/msgmax
+echo 32768 > /proc/sys/kernel/msgmnb
+echo 64 > /proc/sys/kernel/msgmni
+echo 614400 > /proc/sys/net/core/wmem_max 
+### mount squashfs opt/app mtd
+if [ -e /dev/mtdblock4 ]; then
+    /bin/mount -t squashfs /dev/mtdblock4 /opt/app 
+fi; 
+### mount squashfs opt/web mtd
+if [ -e /dev/mtdblock5 ]; then
+    /bin/mount -t squashfs /dev/mtdblock5 /opt/web 
+fi; 
+### mount jffs2 opt/jffs2 mtd
+if [ -e /dev/mtdblock6 ]; then
+    /bin/mount -t jffs2 /dev/mtdblock6 /opt/jffs2 
+fi; 
+### mount squashfs opt/data mtd
+if [ -e /dev/mtdblock7 ]; then
+    /bin/mount -t jffs2 /dev/mtdblock7 /opt/data
+fi;
+hostname ms-ipc
+ifconfig lo 127.0.0.1
+ifconfig eth0 down
+ifconfig eth0 mtu 1470
+ifconfig eth0 192.168.1.123
+route add -net 224.0.0.0 netmask 224.0.0.0 dev eth0 
+cd /opt/app/ko
+./load_ssc377.sh
+date -s "2020-07-01 00:00:00"
+nk_upgarde ysser 8001 image 100 &
+vsftpd /usr/share/vsftpd/vsftpd.conf &
+/opt/app/bin/xipc &
+sleep 3;echo 1 > /sys/module/mi/parameters/drv_venc_wrapper.SCDN_MODE
